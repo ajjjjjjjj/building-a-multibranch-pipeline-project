@@ -8,7 +8,14 @@ pipeline {
                 sh 'echo "Hello world!"'
                 script {
                     log.info("Janek")
+                    log.warning "Hello!"
                 }
+            }
+        }
+        stage('Test') {
+            steps {
+                janek()
+                janek('Stefan')
             }
         }
     }
