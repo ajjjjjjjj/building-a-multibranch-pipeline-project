@@ -6,7 +6,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Hello world!"'
-                log.info("Janek")
+                script {
+                    log.info("Janek")
+                }
             }
         }
     }
