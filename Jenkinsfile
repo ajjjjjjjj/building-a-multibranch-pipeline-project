@@ -24,7 +24,7 @@ pipeline {
             steps {
                 janek()
                 janek name: DB_ENGINE
-                stefan this, 'Hello!'
+                stefan 'Hello!'
             }
         }
     }
