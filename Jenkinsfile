@@ -2,6 +2,12 @@
 
 pipeline {
     agent any
+
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -15,7 +21,8 @@ pipeline {
         stage('Test') {
             steps {
                 janek()
-                janek('Stefan')
+                janek name:'Stefan'
+                stefan this 'Hello!'
             }
         }
     }
