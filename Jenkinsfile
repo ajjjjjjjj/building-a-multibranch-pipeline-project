@@ -23,7 +23,7 @@ pipeline {
                 janek()
                 janek name: DB_ENGINE
                 script {
-                    stefan env, 'Hello!'
+                    stefan this, 'Hello!'
                 }
             }
         }
