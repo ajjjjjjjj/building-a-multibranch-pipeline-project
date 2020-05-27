@@ -22,9 +22,9 @@ pipeline {
             steps {
                 janek()
                 janek name: DB_ENGINE
-                script {
+                //script {
                     stefan this, 'Hello!'
-                }
+                //}
             }
         }
     }
