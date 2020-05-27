@@ -22,7 +22,7 @@ pipeline {
             steps {
                 janek()
                 janek name:'Stefan'
-                stefan this 'Hello!'
+                //stefan this 'Hello!'
             }
         }
     }
