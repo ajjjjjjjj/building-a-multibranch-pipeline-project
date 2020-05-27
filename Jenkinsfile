@@ -1,5 +1,7 @@
 @Library('janek-pipeline-library') _
 
+def EXAMPLE = 'example :)'
+
 pipeline {
     agent any
 
@@ -22,9 +24,7 @@ pipeline {
             steps {
                 janek()
                 janek name: DB_ENGINE
-                //script {
-                    stefan this, 'Hello!'
-                //}
+                stefan this, 'Hello!'
             }
         }
     }
