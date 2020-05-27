@@ -21,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 janek()
-                janek name:'Stefan'
+                janek name: 'Stefan'
                 //stefan this 'Hello!'
             }
         }
