@@ -30,6 +30,9 @@ pipeline {
                 }
             }
         }
+        stage('Stage with steps inside shared lib') {
+            sharedStep BRANCH_NAME
+        }
         stage('Go to Tests?') {
             agent none
             steps {
