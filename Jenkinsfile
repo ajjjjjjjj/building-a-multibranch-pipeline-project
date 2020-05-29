@@ -13,10 +13,30 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello world!"'
+                echo "Building..."
                 script {
                     log.info("Janek")
                     log.warning "Hello!"
+                }
+            }
+        }
+        stage('When on master') {
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
+                    log.info("I'm on " + branch)
+                }
+            }
+        }
+        stage('Go to Tests?') {
+            agent none
+            steps {
+                script {
+                    timeout(time: 1, unit: 'DAYS') {
+                        input message: 'Do tests?'
+                    }
                 }
             }
         }
