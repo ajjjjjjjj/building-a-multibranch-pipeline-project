@@ -49,8 +49,10 @@ pipeline {
         stage('Test') {
             steps {
                 //janek()
-                janek name: DB_ENGINE, env: "xxx"
-                stefan()
+                parallel {
+                    janek name: DB_ENGINE, env: "xxx"
+                    stefan()
+                }
             }
         }
     }
