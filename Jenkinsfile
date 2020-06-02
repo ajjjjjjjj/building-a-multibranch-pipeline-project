@@ -47,11 +47,16 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                //janek()
-                parallel {
-                    janek name: DB_ENGINE, env: "xxx"
-                    stefan()
+            parallel {
+                stage ('Test janek') {
+                    steps {
+                        janek name: DB_ENGINE, env: "xxx"
+                    }
+                }
+                stage ('Test stefan') {
+                    steps {
+                        stefan()
+                    }
                 }
             }
         }
