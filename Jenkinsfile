@@ -47,6 +47,9 @@ pipeline {
             }
         }
         stage('Test') {
+            when {
+                branch 'development'
+            }
             parallel {
                 stage ('Test janek') {
                     steps {
