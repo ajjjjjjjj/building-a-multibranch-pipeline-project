@@ -49,7 +49,7 @@ pipeline {
         stage('Test') {
             steps {
                 janek()
-                janek name: DB_ENGINE
+                janek name: DB_ENGINE, env: "xxx"
                 stefan()
             }
         }
