@@ -58,7 +58,7 @@ pipeline {
                         janek name: DB_ENGINE, env: "xxx"
                         script {
                             def ver = lastSuccessfulBuild()
-                            echo "ver is ${ver}""
+                            echo "ver is ${ver}"
                         }
                     }
                 }
