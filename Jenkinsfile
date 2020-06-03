@@ -18,6 +18,7 @@ pipeline {
                     log.info("Janek")
                     log.warning "Hello!"
                     currentBuild.description = "1.0-${BUILD_NUMBER}"
+                    currentBuild.name = "1.0-${BUILD_NUMBER}"
                 }
             }
         }
