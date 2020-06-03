@@ -56,7 +56,10 @@ pipeline {
                 stage ('Test janek') {
                     steps {
                         janek name: DB_ENGINE, env: "xxx"
-                        lastSuccessfulBuild()
+                        script {
+                            def ver = lastSuccessfulBuild()
+                            echo "ver is ${ver}""
+                        }
                     }
                 }
                 stage ('Test stefan') {
