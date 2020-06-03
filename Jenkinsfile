@@ -36,7 +36,7 @@ pipeline {
             }
 
         }
-        stage('Go to Tests?') {
+        /*stage('Go to Tests?') {
             agent none
             steps {
                 script {
@@ -45,7 +45,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
         stage('Test') {
             when {
                 branch 'development'
