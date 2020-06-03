@@ -54,6 +54,7 @@ pipeline {
                 stage ('Test janek') {
                     steps {
                         janek name: DB_ENGINE, env: "xxx"
+                        lastSuccessfulBuild()
                     }
                 }
                 stage ('Test stefan') {
