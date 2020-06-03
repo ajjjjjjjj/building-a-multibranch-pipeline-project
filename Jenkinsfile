@@ -17,7 +17,7 @@ pipeline {
                 script {
                     log.info("Janek")
                     log.warning "Hello!"
-                    currentBuild.description = "1.0-${BUILD_NUMBER}"
+                    currentBuild.description = "1.0-${BUILD_NUMBER}-${BRANCH_NAME}"
                     //currentBuild.id = "1.0-${BUILD_NUMBER}"
                 }
             }
