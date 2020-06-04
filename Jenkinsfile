@@ -70,7 +70,7 @@ pipeline {
             steps {
                 script {
                     def version = lastSuccessfulBuild()
-                    echo "runE2ETests on version: ${ver}"
+                    echo "runE2ETests on version: ${version}"
                     runE2ETests(version)
                 }
 
