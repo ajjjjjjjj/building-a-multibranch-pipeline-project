@@ -72,7 +72,7 @@ pipeline {
                     def version = lastSuccessfulBuild()
                     echo "e2e-pipeline on version: ${version}"
                     //runE2ETests(version)
-                    def e2eBuild = build job: "e2e-pipeline", parameters: [version: version]
+                    def e2eBuild = build job: "e2e-pipeline", parameters: [[$class: 'StringParameterValue', name: "version", value: version]
                     echo "e2e-pipeline result: ${e2eBuild.result}"
                 }
 
