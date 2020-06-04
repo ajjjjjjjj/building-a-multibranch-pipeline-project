@@ -56,10 +56,7 @@ pipeline {
                 stage ('Test janek') {
                     steps {
                         janek name: DB_ENGINE, env: "xxx"
-                        script {
-                            def ver = lastSuccessfulBuild()
-                            echo "ver is ${ver}"
-                        }
+
                     }
                 }
                 stage ('Test stefan') {
@@ -67,6 +64,16 @@ pipeline {
                         stefan()
                     }
                 }
+            }
+        }
+        stage('e2e test') {
+            steps {
+                script {
+                    def version = lastSuccessfulBuild()
+                    echo "runE2ETests on version: ${ver}"
+                    runE2ETests(version)
+                }
+
             }
         }
     }
