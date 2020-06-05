@@ -71,8 +71,8 @@ pipeline {
                 script {
                     def version = lastSuccessfulBuild()
                     def e2eBuild = build job: "e2e-pipeline", parameters: [
-                        string(name: "version", value: version),
-                        string(name: "project", value: 'tego typu')
+                        string(name: "SERVICE", value: "colony-query"),
+                        //string(name: "project", value: 'tego typu')
                     ]
                     echo "e2e-pipeline result: ${e2eBuild.result}"
                 }
