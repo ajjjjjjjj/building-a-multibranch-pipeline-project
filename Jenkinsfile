@@ -75,6 +75,11 @@ pipeline {
                         //string(name: "project", value: 'tego typu')
                     ]
                     echo "e2e-pipeline result: ${e2eBuild.result}"
+                    if (e2eBuild.result == 'SUCCESS') {
+                        echo "e2e-pipeline finished alright"
+                        // write version to file
+                        // git add, commit -m "Updated ${SERVICE} to ${VERSION}", push
+                    }
                 }
 
             }
