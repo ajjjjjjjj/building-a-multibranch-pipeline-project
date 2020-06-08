@@ -10,6 +10,10 @@ pipeline {
         DB_ENGINE    = 'sqlite'
     }
 
+    parameters {
+        string(name: "TEST", value: "Hello")
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -64,7 +68,9 @@ pipeline {
                         stefan()
                         script{
 
-                            echo "${withCredentials('my-credentials-id')}"
+                            echo "${params.TEST}"
+                            params.TEST = "janek"
+                            echo "${params.TEST}"
                         }
                     }
                 }
