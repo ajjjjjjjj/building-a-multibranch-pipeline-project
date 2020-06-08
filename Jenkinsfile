@@ -66,12 +66,6 @@ pipeline {
                 stage ('Test stefan') {
                     steps {
                         stefan()
-                        script{
-
-                            echo "${params.TEST}"
-                            params.TEST = "janek"
-                            echo "${params.TEST}"
-                        }
                     }
                 }
             }
@@ -82,6 +76,7 @@ pipeline {
                     def version = lastSuccessfulBuild()
                     def e2eBuild = build job: "e2e-pipeline", parameters: [
                         string(name: "SERVICE", value: "colony-query"),
+                        string(name: 'COLONY_COMMAND_VERSION', defaultValue: '1.0.2')
                         //string(name: "project", value: 'tego typu')
                     ]
                     echo "e2e-pipeline result: ${e2eBuild.result}"
