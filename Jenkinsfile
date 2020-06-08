@@ -11,7 +11,7 @@ pipeline {
     }
 
     parameters {
-        string(name: "TEST", value: "Hello")
+        string(name: "TEST", defaultValue: "Hello")
     }
 
     stages {
