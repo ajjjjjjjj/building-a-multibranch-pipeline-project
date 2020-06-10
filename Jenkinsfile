@@ -66,6 +66,7 @@ pipeline {
                 stage ('Test stefan') {
                     steps {
                         stefan()
+                        janek name: VERSION, env: "yyy"
                     }
                 }
             }
